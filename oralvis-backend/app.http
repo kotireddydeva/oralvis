@@ -1,0 +1,23 @@
+GET http://localhost:3000/
+
+###
+
+POST http://localhost:3000/register
+Content-Type: application/json
+
+{
+  "email": "technician@oralvis.com",
+  "password": "technician@123",
+  "role": "Technician"
+}
+
+###
+
+POST http://localhost:3000/login
+Content-Type: application/json
+
+
+{
+  "email": "technician@oralvis.com",
+  "password": "technician@123"
+}
