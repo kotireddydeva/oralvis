@@ -139,6 +139,10 @@ const verifyDentist = (req, res, next) => {
   }
 };
 
+app.get('/', (req, res) => {
+  res.send(`Server Running at ${PORT}`)
+})
+
 
 app.post('/login', async (req, res) => {
     try {
