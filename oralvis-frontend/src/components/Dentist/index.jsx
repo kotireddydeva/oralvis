@@ -1,5 +1,4 @@
 import { useState, useEffect } from "react"
-import { ThreeDots } from 'react-loader-spinner'
 import { useAuth } from "../../context/AuthContext"
 import axios from "axios"
 import jsPDF from "jspdf"
@@ -109,7 +108,7 @@ function Dentist() {
           Search
         </button>
       </form>
-      {loading ? <div className="max-w-sm m-auto"><ThreeDots /></div> :
+      {loading ? <div className="max-w-sm m-auto"><p>Loading......</p></div> :
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
           {filteredScans.length === 0 ? (
             <p className="text-center col-span-full text-gray-500">No scans found.</p>
