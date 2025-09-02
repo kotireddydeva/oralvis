@@ -21,7 +21,7 @@ app.use(express.json())
 
 const allowedOrigins = [
   "http://localhost:5173", 
-  "https://oralvis-delta.vercel.app/"
+  "https://oralvis-delta.vercel.app"
 ];
 
 app.use(cors({
