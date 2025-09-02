@@ -12,10 +12,10 @@ function Header() {
       } else if (user.role.toLowerCase() === "dentist") {
         navigate("/dentist")
       } else {
-        navigate("/") // fallback
+        navigate("/") 
       }
     } else {
-      navigate("/") // if not logged in, go to home
+      navigate("/")
     }
   }
 
@@ -37,7 +37,7 @@ function Header() {
         ) : (
           <button
             onClick={handleLoginClick}
-            className="bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600 transition-colors"
+            className="bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600 transition-colors cursor-pointer"
           >
             Login
           </button>
