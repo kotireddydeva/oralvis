@@ -137,6 +137,22 @@ Live demo is available here:
 
 ---
 
+### 🔑 Default Login Credentials
+
+For quick testing, you can use the following credentials:
+
+**Technician Login**
+
+* **Email:** `technician@oralvis.com`
+* **Password:** `technician@123`
+
+**Dentist Login**
+
+* **Email:** `dentist@oralvis.com`
+* **Password:** `dentist@123`
+
+---
+
 ## Screenshots
 
 **Technician Upload Page**
