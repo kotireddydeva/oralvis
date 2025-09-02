@@ -19,9 +19,20 @@ if (!fs.existsSync(uploadsDir)) fs.mkdirSync(uploadsDir);
 
 app.use(express.json())
 
+const allowedOrigins = [
+  "http://localhost:5173", 
+  "https://oralvis-delta.vercel.app/"
+];
+
 app.use(cors({
-    origin: 'http://localhost:5173',  // frontend URL
-    credentials: true,                // if you use cookies
+    origin: function (origin, callback) {
+    if (!origin || allowedOrigins.includes(origin)) {
+      callback(null, true);
+    } else {
+      callback(new Error("Not allowed by CORS"));
+    }
+  },  
+    credentials: true,               
 }));
 
 cloudinary.config({
