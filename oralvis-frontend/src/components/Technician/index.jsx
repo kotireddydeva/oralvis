@@ -30,7 +30,7 @@ function Technician() {
 
     try {
       const response = await axios.post(
-        "https://oralvis.tmguestblog.com/upload",
+        "https://oralvis-backend-sigma.vercel.app/upload",
         formData,
         {
           headers: {

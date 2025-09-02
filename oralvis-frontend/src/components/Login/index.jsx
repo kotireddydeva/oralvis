@@ -26,7 +26,7 @@ const Login = () => {
 
     try {
 
-      const response = await axios.post("https://oralvis.tmguestblog.com/login", { email, password })
+      const response = await axios.post("https://oralvis-backend-sigma.vercel.app/login", { email, password })
 
       const { token } = response.data
       authLogin(token)

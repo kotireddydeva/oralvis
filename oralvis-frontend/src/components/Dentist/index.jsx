@@ -13,7 +13,7 @@ function Dentist() {
   useEffect(() => {
     const fetchScans = async () => {
       try {
-        const response = await axios.get("https://oralvis.tmguestblog.com/scans", {
+        const response = await axios.get("https://oralvis-backend-sigma.vercel.app/scans", {
           headers: {
             Authorization: `Bearer ${user.token}`,
           },
@@ -34,7 +34,7 @@ function Dentist() {
     e.preventDefault();
     setLoading(true);
     try {
-      const response = await axios.get("https://oralvis.tmguestblog.com/scans", {
+      const response = await axios.get("https://oralvis-backend-sigma.vercel.app/scans", {
         headers: { Authorization: `Bearer ${user.token}` },
         params: { patientId: searchId }
       });
