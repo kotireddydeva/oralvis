@@ -1,7 +1,9 @@
 import { useState, useEffect } from "react"
-import { FaCloudUploadAlt } from "react-icons/fa";
+import { FaCloudUploadAlt } from "react-icons/fa"
 import { useAuth } from "../../context/AuthContext"
 import axios from "axios"
+
+const {VITE_API_URL} = import.meta.env
 
 function Technician() {
   const { user } = useAuth()
@@ -30,7 +32,7 @@ function Technician() {
 
     try {
       const response = await axios.post(
-        "https://oralvis-backend-sigma.vercel.app/upload",
+        `${VITE_API_URL}/upload`,
         formData,
         {
           headers: {

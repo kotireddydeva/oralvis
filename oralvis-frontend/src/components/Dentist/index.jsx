@@ -3,6 +3,8 @@ import { useAuth } from "../../context/AuthContext"
 import axios from "axios"
 import jsPDF from "jspdf"
 
+const {VITE_API_URL} = import.meta.env
+
 function Dentist() {
   const { user } = useAuth()
   const [loading, setLoading] = useState(true)
@@ -13,7 +15,7 @@ function Dentist() {
   useEffect(() => {
     const fetchScans = async () => {
       try {
-        const response = await axios.get("https://oralvis-backend-sigma.vercel.app/scans", {
+        const response = await axios.get(`${VITE_API_URL}/scans`, {
           headers: {
             Authorization: `Bearer ${user.token}`,
           },
@@ -34,7 +36,7 @@ function Dentist() {
     e.preventDefault();
     setLoading(true);
     try {
-      const response = await axios.get("https://oralvis-backend-sigma.vercel.app/scans", {
+      const response = await axios.get(`${VITE_API_URL}/scans`, {
         headers: { Authorization: `Bearer ${user.token}` },
         params: { patientId: searchId }
       });

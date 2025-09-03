@@ -3,6 +3,8 @@ import axios from "axios"
 import { useNavigate } from "react-router-dom"
 import { useAuth } from '../../context/AuthContext'
 
+const {VITE_API_URL} = import.meta.env
+
 const Login = () => {
   const [email, setEmail] = useState("")
   const [password, setPassword] = useState("")
@@ -26,7 +28,7 @@ const Login = () => {
 
     try {
 
-      const response = await axios.post("https://oralvis-backend-sigma.vercel.app/login", { email, password })
+      const response = await axios.post(`${VITE_API_URL}/login`, { email, password })
 
       const { token } = response.data
       authLogin(token)

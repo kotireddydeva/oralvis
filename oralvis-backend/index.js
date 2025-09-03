@@ -196,11 +196,12 @@ app.post('/upload', verifyTechnician, upload.single('file'), async (req, res) =>
     });
 
     const imageUrl = result.secure_url;
+    const scanId = uuidv4()
 
     await db.run(
-      `INSERT INTO scans (patientName, patientId, scanType, region, imageUrl, uploadDate) 
-       VALUES (?, ?, ?, ?, ?, ?)`,
-      [patientName, patientId, scanType, region, imageUrl, new Date().toISOString()]
+      `INSERT INTO scans (id, patientName, patientId, scanType, region, imageUrl, uploadDate) 
+       VALUES (?, ?, ?, ?, ?, ?, ?)`,
+      [scanId, patientName, patientId, scanType, region, imageUrl, new Date().toISOString()]
     );
 
     fs.unlink(req.file.path, (err) => {
